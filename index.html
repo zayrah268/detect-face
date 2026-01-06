@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detect Face Shape – Simple Steps to Find Yours Fast</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Detect your face shape using an accurate measurement method. Learn face shape types, common mistakes, and style tips for haircuts, glasses, and grooming." />
+  <meta name="keywords" content="detect face shape, face shape detection, face shape analysis, face shape table, oval round square heart diamond oblong" />
+  <meta name="author" content="Face Shape Guide" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #070A12;
+      --bg2:#0a1224;
+      --card: rgba(255,255,255,0.07);
+      --card2: rgba(255,255,255,0.09);
+      --line: rgba(255,255,255,0.12);
+      --text: #f5f7ff;
+      --muted: rgba(245,247,255,0.72);
+
+      --brand: #7C3AED;
+      --brand2:#06B6D4;
+      --brand3:#22C55E;
+
+      --shadow: 0 24px 70px rgba(0,0,0,0.55);
+      --radius: 22px;
+      --max: 1200px;
+
+      --font: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: var(--font);
+      background:
+        radial-gradient(1000px 500px at 12% 8%, rgba(124,58,237,0.30), transparent 60%),
+        radial-gradient(1000px 500px at 88% 10%, rgba(6,182,212,0.22), transparent 60%),
+        radial-gradient(1100px 700px at 50% 95%, rgba(34,197,94,0.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    /* ===== NAV ===== */
+    .nav{
+      position: sticky;
+      top:0;
+      z-index:999;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(7,10,18,0.65);
+      backdrop-filter: blur(12px);
+    }
+    .nav-inner{
+      width: min(var(--max), 92%);
+      margin: 0 auto;
+      padding: 16px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 20px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 900;
+      letter-spacing: -0.4px;
+      font-size: 18px;
+      white-space:nowrap;
+    }
+    .pulse{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 18px rgba(124,58,237,0.65);
+    }
+    .nav a{
+      color: rgba(245,247,255,0.86);
+      text-decoration:none;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      transition: 0.25s ease;
+    }
+    .nav a:hover{
+      background: rgba(255,255,255,0.10);
+      transform: translateY(-1px);
+    }
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* ===== HERO ===== */
+    .hero{
+      width: 100%;
+      padding: 55px 0 30px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(800px 320px at 18% 15%, rgba(124,58,237,0.33), transparent 60%),
+        radial-gradient(800px 320px at 85% 20%, rgba(6,182,212,0.25), transparent 60%);
+      opacity:0.85;
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      width: min(var(--max), 92%);
+      margin: 0 auto;
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items:stretch;
+    }
+
+    .hero-left{
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-left::after{
+      content:"";
+      position:absolute;
+      right:-80px; top:-80px;
+      width: 260px; height: 260px;
+      border-radius: 60px;
+      background: linear-gradient(140deg, rgba(124,58,237,0.35), rgba(6,182,212,0.25));
+      filter: blur(1px);
+      transform: rotate(14deg);
+      opacity: 0.7;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      width: fit-content;
+      margin-bottom: 14px;
+      position:relative;
+      z-index:2;
+    }
+    .tag i{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(90deg, var(--brand3), var(--brand2));
+      box-shadow: 0 0 18px rgba(6,182,212,0.45);
+      display:inline-block;
+    }
+
+    h1{
+      font-size: clamp(32px, 4.5vw, 56px);
+      line-height: 1.06;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      position:relative;
+      z-index:2;
+    }
+    .lead{
+      color: rgba(245,247,255,0.80);
+      font-size: 16.8px;
+      max-width: 70ch;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-top: 18px;
+      position:relative;
+      z-index:2;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font-weight: 900;
+      text-decoration:none;
+      transition: 0.25s ease;
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.30);
+    }
+    .btn.primary{
+      border:none;
+      color:#071225;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+
+    /* HERO RIGHT: Pro Stats Panel */
+    .hero-right{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+
+    .stat{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .stat h3{
+      font-size: 14px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(245,247,255,0.80);
+      margin-bottom: 6px;
+    }
+    .stat p{
+      color: rgba(245,247,255,0.78);
+      font-size: 14.6px;
+      line-height: 1.7;
+    }
+
+    .steps-mini{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .chip{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 800;
+      color: rgba(245,247,255,0.90);
+      font-size: 14px;
+    }
+
+    /* ===== CONTENT ===== */
+    .content{
+      width: min(var(--max), 92%);
+      margin: 26px auto 70px;
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap: 22px;
+      align-items:start;
+    }
+
+    .article{
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .article h2{
+      margin-top: 26px;
+      margin-bottom: 10px;
+      font-size: 22px;
+      letter-spacing: -0.2px;
+    }
+
+    .article p{
+      color: rgba(245,247,255,0.86);
+      font-size: 16.2px;
+      margin-bottom: 14px;
+    }
+
+    .callout{
+      margin: 18px 0;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(135deg, rgba(34,197,94,0.14), rgba(6,182,212,0.12));
+      color: rgba(245,247,255,0.90);
+      font-weight: 600;
+    }
+
+    ul{ margin: 12px 0 18px 18px; }
+    li{ margin: 10px 0; color: rgba(245,247,255,0.86); font-size: 16px; }
+
+    /* Table */
+    .table-wrap{
+      margin-top: 16px;
+      overflow:auto;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      background: rgba(255,255,255,0.04);
+    }
+    th,td{
+      padding: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      text-align:left;
+    }
+    th{
+      background: rgba(255,255,255,0.06);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 12.5px;
+      color: rgba(245,247,255,0.82);
+      font-weight: 900;
+    }
+    td{
+      font-weight: 600;
+      color: rgba(245,247,255,0.88);
+      font-size: 15.6px;
+    }
+    tr:hover td{ background: rgba(255,255,255,0.06); }
+
+    /* Sidebar */
+    .sidebar{
+      position:sticky;
+      top: 92px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .side-card h3{
+      font-size: 16px;
+      margin-bottom: 10px;
+      letter-spacing: -0.2px;
+    }
+    .side-card p{
+      color: rgba(245,247,255,0.75);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .pill{
+      display:inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      margin: 6px 6px 0 0;
+      font-weight: 900;
+      font-size: 12.5px;
+      color: rgba(245,247,255,0.86);
+    }
+
+    footer{
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding: 26px 16px;
+      text-align:center;
+      color: rgba(245,247,255,0.62);
+      background: rgba(7,10,18,0.65);
+    }
+
+    @media(max-width: 1050px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .content{ grid-template-columns: 1fr; }
+      .sidebar{ position:relative; top:0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="logo"><span class="pulse"></span> Face Shape Pro</div>
+      <div class="nav-links">
+        <a href="#steps">Steps</a>
+        <a href="#table">Table</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#styles">Style Tips</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="tag"><i></i> Accurate Face Shape Detection • Pro Method</div>
+        <h1>Detect Face Shape: Simple Steps to Find Yours Fast</h1>
+        <p class="lead">
+          A professional face shape analysis is based on measurements and balance — not guessing.
+          Use this guide to find your exact shape, then improve your haircut, glasses, grooming, and confidence.
+        </p>
+
+        <div class="hero-actions">
+          <!-- REQUIRED LINK -->
+          <a class="btn primary" href="https://faceshapedetector.ai/" target="_blank" rel="noopener">detect face shape</a>
+          <a class="btn" href="#steps">Start Method</a>
+          <a class="btn" href="#table">View Table</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="stat">
+          <h3>What You Need</h3>
+          <p>Mirror • Good lighting • Measuring tape or ruler app • Hair pulled back for accurate results.</p>
+        </div>
+
+        <div class="stat">
+          <h3>4 Key Measurements</h3>
+          <p>Forehead width, cheekbone width, jawline width, and face length — compare proportion + balance.</p>
+        </div>
+
+        <div class="stat">
+          <h3>Quick Indicators</h3>
+          <div class="steps-mini">
+            <div class="chip"><span>Widest Area</span> <span>✅</span></div>
+            <div class="chip"><span>Face Length</span> <span>✅</span></div>
+            <div class="chip"><span>Jawline</span> <span>✅</span></div>
+            <div class="chip"><span>Balance</span> <span>✅</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content">
+    <article class="article">
+
+      <p>
+        Detecting your face shape is one of the most useful things you can do for your personal style.
+        When you know your face shape, choosing the right haircut, glasses, beard style, makeup placement, and even accessories becomes much easier.
+        Many people look in the mirror and guess their face shape, but that guess is often wrong because our minds focus on small details rather than overall proportions.
+        A proper face shape analysis is based on measurements and balance, not assumptions. Once you learn the correct method,
+        face shape detection becomes quick, accurate, and highly beneficial for everyday grooming.
+      </p>
+
+      <p>
+        In today’s world, people search for “how to detect my face shape” because face shape plays a major role in how your features appear.
+        Whether you are a man choosing a beard style or a woman selecting the perfect haircut, face shape helps you create harmony in your look.
+        Even if your face changes slightly due to weight gain or weight loss, your bone structure usually remains the same,
+        which is why face shape detection is mostly about understanding your natural facial frame.
+      </p>
+
+      <h2>Why Face Shape Detection Matters in Real Life</h2>
+      <p>
+        Face shape detection matters because it gives you a clear direction for styling. Without knowing your face shape,
+        you may choose a hairstyle that makes your face look wider, longer, or unbalanced. With the correct shape,
+        you can select styles that enhance your best features and reduce areas that you don’t want to highlight.
+        This is why professional hair stylists and makeup artists always begin with face shape analysis.
+      </p>
+
+      <div class="callout">
+        <strong>Confidence Booster:</strong> When your haircut, glasses, and grooming match your face structure,
+        your look becomes naturally balanced, cleaner, and more attractive.
+      </div>
+
+      <h2 id="steps">How to Detect Face Shape at Home (Accurate Method)</h2>
+      <p>
+        You can detect your face shape at home in just a few minutes. The process is simple, and you do not need any expensive tools.
+        All you need is a mirror, good lighting, and either a measuring tape or a ruler app on your phone.
+        Before you begin, pull your hair back so your hairline is visible. If your forehead is covered, the results may be inaccurate.
+      </p>
+
+      <p>
+        Now focus on four areas: forehead width, cheekbone width, jawline width, and face length.
+        Measure your forehead from one temple to the other. Then measure your cheekbones at the widest area under your eyes.
+        Next, measure your jawline from one jaw corner to the other.
+        Finally, measure the full length of your face from your hairline down to the chin.
+      </p>
+
+      <ul>
+        <li><strong>Forehead Width:</strong> Measure from one temple to the other.</li>
+        <li><strong>Cheekbone Width:</strong> Measure the widest area under the eyes.</li>
+        <li><strong>Jawline Width:</strong> Measure from jaw corner to jaw corner.</li>
+        <li><strong>Face Length:</strong> Measure from hairline down to chin.</li>
+      </ul>
+
+      <p>
+        Once you have these measurements, look at which area is widest and how your face length compares to your width.
+        This is the most reliable way to detect face shape, and it is the same technique used in professional face mapping.
+      </p>
+
+      <h2>Common Face Shapes and Their Key Features</h2>
+      <p>
+        Most face shapes fall into six main categories: oval, round, square, heart, diamond, and oblong/rectangle.
+        An oval face is balanced and slightly longer than wide, with a soft jawline.
+        A round face has full cheeks and almost equal length and width.
+        A square face has strong angles, with a bold jawline and equal proportions.
+      </p>
+
+      <p>
+        A heart-shaped face has a wider forehead and a narrower, pointed chin.
+        A diamond face has wide cheekbones, but the forehead and jawline are narrower.
+        An oblong face is longer than wide and often has straight sides with less cheek fullness.
+        Many people find that their face looks like a mix of two shapes, and that is normal.
+      </p>
+
+      <h2 id="table">Face Shape Identification Table (Quick Comparison)</h2>
+      <p>
+        The table below makes it easier to match your measurements and features. It gives a quick overview so you can detect your face shape accurately without confusion.
+        Use this table as a reference after measuring. Do not rely on just one feature. The most accurate results come when you match both shape and proportion.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Face Shape</th>
+              <th>Most Noticeable Feature</th>
+              <th>Length vs Width</th>
+              <th>Jawline Look</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Oval</strong></td>
+              <td>Balanced and smooth</td>
+              <td>Slightly longer</td>
+              <td>Soft and rounded</td>
+            </tr>
+            <tr>
+              <td><strong>Round</strong></td>
+              <td>Full cheeks</td>
+              <td>Almost equal</td>
+              <td>Curved and gentle</td>
+            </tr>
+            <tr>
+              <td><strong>Square</strong></td>
+              <td>Strong angles</td>
+              <td>Almost equal</td>
+              <td>Sharp and defined</td>
+            </tr>
+            <tr>
+              <td><strong>Heart</strong></td>
+              <td>Wide forehead</td>
+              <td>Medium length</td>
+              <td>Pointed chin</td>
+            </tr>
+            <tr>
+              <td><strong>Diamond</strong></td>
+              <td>Wide cheekbones</td>
+              <td>Medium length</td>
+              <td>Narrow jawline</td>
+            </tr>
+            <tr>
+              <td><strong>Oblong/Rectangle</strong></td>
+              <td>Long face</td>
+              <td>Much longer</td>
+              <td>Straight or strong</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="mistakes">Mistakes People Make While Detecting Face Shape</h2>
+      <p>
+        One of the biggest mistakes is taking selfies from a high angle. This changes proportions and makes the face look slimmer or longer than it actually is.
+        Another common mistake is assuming the face shape based only on cheeks. Cheeks may appear fuller because of weight,
+        but face shape is based on structure, not temporary changes. Many people also ignore their hairline, leading to wrong results.
+      </p>
+
+      <p>
+        Another problem is checking only the front view. A face may appear round from the front but show a stronger jawline from the side.
+        For accurate face shape detection, always check your face from both front and side angles.
+        When you combine measurement and observation, your results become much more reliable.
+      </p>
+
+      <h2 id="styles">How Face Shape Helps You Choose the Right Style</h2>
+      <p>
+        Once you detect your face shape, you can make smarter grooming choices. Round faces look best with hairstyles that add height.
+        Square faces look better with textured hairstyles that soften angles.
+        Heart-shaped faces often need balance between forehead and chin, so medium styles with volume near the jawline work well.
+        Diamond faces look great with styles that add volume near the forehead or jawline rather than focusing on cheekbones.
+        Oblong faces look better with styles that reduce length and add width.
+      </p>
+
+      <p>
+        Glasses become easier to choose. Round faces often look best in rectangular frames.
+        Square faces often suit round or oval frames.
+        Heart faces look better in lighter frames that do not add extra width to the forehead.
+        Diamond faces suit cat-eye or bold top-frame designs.
+        Oblong faces benefit from wider frames that reduce the long appearance.
+      </p>
+
+      <p>
+        Even beard styling depends on face shape. A beard can create the illusion of a stronger chin or a slimmer face depending on how it is shaped.
+        That is why face shape detection is useful for both men and women.
+      </p>
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Detecting your face shape is a small step that can create a big improvement in your overall look.
+        Instead of wasting time on random style trends, you can choose what actually suits your facial structure.
+        This method is simple, accurate, and works for everyone. Once you identify your face shape correctly,
+        you can upgrade your haircut, glasses, grooming, makeup, and even your confidence.
+      </p>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="side-card">
+        <h3>Quick Summary</h3>
+        <p>Measure forehead, cheekbones, jawline, and face length. Match proportions with the table and confirm with side view.</p>
+      </div>
+
+      <div class="side-card">
+        <h3>Pro Styling Benefits</h3>
+        <p>Your face shape helps you choose the best haircut, glasses, grooming and makeup placement instantly.</p>
+        <div>
+          <span class="pill">Haircuts</span>
+          <span class="pill">Glasses</span>
+          <span class="pill">Beard</span>
+          <span class="pill">Makeup</span>
+          <span class="pill">Confidence</span>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h3>Accuracy Checklist</h3>
+        <p>Avoid high-angle selfies, keep hairline visible, use good lighting, and compare measurements (don’t guess).</p>
+      </div>
+    </aside>
+  </section>
+
+  <footer>
+    © 2026 • Face Shape Pro Guide • Fully Optimized Premium UI/UX
+  </footer>
+
+</body>
+</html>
